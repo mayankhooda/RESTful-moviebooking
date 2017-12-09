@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+
+<link rel="stylesheet" href="/new.css">
+<div class="ui container">
+  <div class="ui huge header center aligned" style="font-size: 3em">Edit <%= movie.Title %> contents</div>
+  <div id="red">
+  <form action="/movieblog/<%= movie._id %>?_method=PUT" method="POST" class="ui form">
+    <div class="ui field">
+      <label>Title</label>
+      <input type="text" name="Title" value="<%= movie.Title %>">
+    </div>
+    <div class="ui field">
+      <label>Image URL</label>
+      <input type="text" name="Poster" value="<%= movie.Poster %>">
+    </div>
+    <div class="ui field">
+      <label>Plot</label>
+      <textarea name="Plot" rows="4"><%- movie.Plot %></textarea>
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+  </div>
+</div>
+
+<% include ./partials/footer %>

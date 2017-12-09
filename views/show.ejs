@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+  <link rel="stylesheet" href="/show.css">
+  <div class="ui container">
+    <div class="ui segment">
+      <div class="ui centered grid">
+        <div class="row">
+          <div class="sixteen wide column">
+            <div class="ui huge header center aligned" style="font-size: 2.5em">
+              <%= movie.Title %>
+            </div>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <img src="<%= movie.Poster %>" class="ui rounded image">
+        </div>
+        <div class="eight wide column">
+          <div id="p">
+            <%- movie.Plot %>
+          </div>
+          <a class="ui right floated blue button" href="<%= movie._id %>/edit">
+            Edit
+          </a>
+          <form action="<%= movie._id %>?_method=DELETE" method="post">
+            <button class="ui right floated red button">
+              Delete
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include ./partials/footer %>

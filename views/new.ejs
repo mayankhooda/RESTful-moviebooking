@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+  <link rel="stylesheet" href="/new.css">
+  <div class="ui container">
+    <div class="ui huge header center aligned" style="font-size: 4em">Add new entry to Blog!</div>
+    <div id="red">
+    <form action="/movieblog" method="POST" class="ui form">
+      <div class="ui field">
+        <label>Title</label>
+        <input type="text" name="Title">
+      </div>
+      <div class="ui field">
+        <label>Image URL</label>
+        <input type="text" name="Poster">
+      </div>
+      <div class="ui field">
+        <label>Plot</label>
+        <textarea name="Plot" rows="4"></textarea>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+    </div>
+  </div>
+
+  <% include ./partials/footer %>

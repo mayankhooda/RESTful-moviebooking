@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+  <link rel="stylesheet" href="/index.css">
+  <div class="ui container">
+    <div class="ui huge header center aligned" style="font-size: 4em">Welcome to the Movie Blog!</div>
+    <div class="ui container">
+      <div class="ui three column stackable grid">
+        <% movies.forEach(function(movie){ %>
+          <div class="ui column">
+            <a href="/movieblog/<%= movie._id %>">
+              <div class="ui segment">
+                <div class="ui large header">
+                  <%= movie.Title %>
+                </div>
+                <div class="ui stackable grid">
+                  <div class="six wide column" id="image">
+                    <img class="ui small rounded image" src="<%= movie.Poster %>">
+                  </div>
+                  <div class="ten wide column" id="plot">
+                    <%- movie.Plot %>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% }); %>
+      </div>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+  <% include ./partials/footer %>

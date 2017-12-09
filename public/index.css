@@ -1,0 +1,11 @@
+#image {
+    padding-right: 0;
+}
+
+#plot {
+    padding-left: 10px;
+}
+
+.ui.column a {
+    color: black;
+}
